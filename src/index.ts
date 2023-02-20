@@ -15,13 +15,14 @@ Starting service...`)
 
   // Routes
   app.get('/', (_req, res) => res.sendFile(path.join(__dirname, '/index.html')))
-  app.get('/version', (_req, res) =>
+ /* app.get('/version', (_req, res) =>
     res
       .status(200)
       .send(
         `${process.env.npm_package_name} ${process.env.npm_package_version}`
       )
   )
+  */
   app.get('/youtube/:id', (req, res) => {
     YTDownload(req.params.id, res)
   })
